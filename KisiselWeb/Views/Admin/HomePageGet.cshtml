@@ -1,0 +1,32 @@
+﻿@model KisiselWeb.Models.Classes.HomePage
+@{
+    ViewBag.Title = "HomePageGet";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mt-4">Ana Sayfa Güncelle</h2>
+<br />
+
+@using (Html.BeginForm("HomePageUpdate", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.id) //th yi çekti
+    @Html.TextBoxFor(x => x.id, new { @class = "form-control", @readonly = "readonly" }) //td yi çekti
+    <br />
+
+    @Html.LabelFor(x => x.name)
+    @Html.TextBoxFor(x => x.name, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.profile)
+    @Html.TextBoxFor(x => x.profile, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.description)
+    @Html.TextAreaFor(x => x.description, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.job)
+    @Html.TextBoxFor(x => x.job, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.contact)
+    @Html.TextBoxFor(x => x.contact, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Anasayfa Güncellle</button>
+}
